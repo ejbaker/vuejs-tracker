@@ -1,0 +1,19 @@
+@import "./bootstrap/main.scss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+// margin to help clear the nav bar
+#content {
+	margin-top: 90px;
+}
+
+aside {
+  margin-bottom: 20px;
+}
+
+textarea {
+  max-width: 95%;
+}

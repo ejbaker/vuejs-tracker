@@ -1,0 +1,12 @@
+// assign the font generally
+div, table, span {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+@import "animate.scss";
+@import "forms.scss";
+@import "lists.scss";
+@import "menus.scss";
+@import "misc.scss";
+@import "modals.scss";
+@import "pagination.scss";

@@ -1,0 +1,17 @@
+@import "../bootstrap/main.scss";
+
+.preferences {
+    position: relative;
+}
+.advanced-preferences {
+    position: fixed;
+    left: 0;
+    right: 0;
+	background: #eee;
+	padding: 5px 10px;
+}
+.btn.show-preferences {
+    display: block;
+    margin-left: 5px;
+}
+

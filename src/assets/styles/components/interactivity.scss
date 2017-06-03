@@ -1,0 +1,49 @@
+// @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+// @import "bootstrap.min.scss";
+
+@import "../bootstrap/main.scss";
+
+// components
+.interactivity {
+	background: #ccc;
+	display: flex;
+  align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 15px;
+	& > div,
+	.btn.change-page,
+	.btn.show-preferences,
+	.btn.reload-doc,
+	.btn.export,
+	.btn.preview,
+	.exported {
+		display: block;
+		margin-left: 5px;
+	}
+	& > div:nth-child(3) {
+    position: relative;
+		flex-grow: 1;
+		display: flex;
+    align-items: center;
+		margin-left: 0;
+		overflow: visible;
+	}
+	form {
+		display: flex;
+		input {
+			margin-left: 5px;
+		}
+	}
+}
+
+.user-update {
+	position: fixed;
+	top: 50px;
+	left: 0;
+	right: 0;
+	background: #eee;
+	padding: 5px 10px;
+}
