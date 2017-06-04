@@ -1,9 +1,13 @@
 {
   "name": "threadtracker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vue2 Activity Tracker for Journal RP",
   "author": "rainfall",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ejbaker/vuejs-tracker.git"
+  },
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",

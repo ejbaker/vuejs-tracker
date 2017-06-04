@@ -10,7 +10,7 @@
 					</label>
 				</div>
 				<div class="form-check form-check-inline">
-					<label class="form-check-label" title="If you're using nested data.'">
+					<label class="form-check-label" title="If you're using nested data.">
 						<input type="checkbox" v-model="newPreferences.nestedData" class="form-check-input">
 						Detect Nested Data
 					</label>
