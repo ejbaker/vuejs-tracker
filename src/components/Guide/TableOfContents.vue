@@ -1,9 +1,9 @@
 <template>
     <aside v-once>
         <h1>Table of Contents</h1>
-        <ul>
-            <li v-for="section in sections">{{ section.ordinal }} <a :href="section.link">{{ section.title }}</a></li>
-        </ul>
+        <ol>
+            <li v-for="section in sections"><a :href="section.link">{{ section.title }}</a></li>
+        </ol>
     </aside>
 </template>
 
@@ -29,8 +29,7 @@ export default {
 	computed: {
 		sections() {
 			// create proper sections from raw sections
-			return map(this.rawSections, (section, index) => ({
-				ordinal: `${index + 1}.`,
+			return map(this.rawSections, section => ({
 				title: section,
 				link: `#${lowercaseShrink(section)}`,
 			}));

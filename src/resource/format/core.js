@@ -1,11 +1,15 @@
 // DEPENDENCIES
 // =============================================================================
+// third-party
 import {
 	map,
 	forEach,
 	forEachRight,
 	includes,
+	isString,
 } from "lodash";
+// filters
+import { lowercaseShrink } from "@/utils/filters";
 
 
 // METHODS
@@ -24,10 +28,36 @@ function formatRow(row, index, labels) {
 	const formattedRow = {};
 	// format!
 	labels.forEach((label, key) => {
+		// check cell
+		if (isString(row[key])) {
+			// make matches simple
+			const lowercaseStr = row[key].toLowerCase();
+			// boolean
+			if (lowercaseStr === "true" || lowercaseStr === "yes") {
+				row[key] = true;
+			}
+			else if (lowercaseStr === "false" || lowercaseStr === "no") {
+				row[key] = false;
+			}
+		}
+		// add the cell
 		formattedRow[label] = row[key];
 	});
 	// add to array
 	return formattedRow;
+}
+
+/**
+ * Ensure the labels from user input are correctly formatted.
+ *
+ * @method formatLabels
+ * @param {array} labels
+ * @return {array}
+ */
+function formatLabels(labels) {
+	// loop through labels, making them lowercase and label-safe
+	return map(labels, label => lowercaseShrink(label, "_")
+			.replace(/[`~!@#$%^&*()|+\-=?;:'",.<>{}[\]\\/]/gi, ""));
 }
 
 /**
@@ -41,7 +71,7 @@ function formatRow(row, index, labels) {
 function createLabels(page, useLabels) {
 	// the first row is made up of labels
 	if (useLabels) {
-		return page.shift();
+		return formatLabels(page.shift());
 	}
 	// otherwise...
 	const labelCount = page[0].length;
@@ -91,11 +121,11 @@ function formatPage(page, preferences) {
 			for (let i = index; i > -1; --i) {
 				if (!needsNesting(mappedPage[i], labels)) {
 					// create a nested property on the parent
-					if (!mappedPage[i].Nested) {
-						mappedPage[i].Nested = [];
+					if (!mappedPage[i].nested) {
+						mappedPage[i].nested = [];
 					}
 					// add to the correct parent
-					mappedPage[i].Nested.push(datum);
+					mappedPage[i].nested.push(datum);
 					// stop looping
 					break;
 				}
@@ -142,12 +172,31 @@ function formatDoc(responses, params) {
 	}));
 }
 
+/**
+ * Format a document, by pages.
+ *
+ * @method formatPages
+ * @param {object} data
+ */
+function formatDocPaged(data, params) {
+	// get the page
+	if (!params.selectedPage) {
+		params.selectedPage = params.pages[0];
+	}
+	// format
+	return {
+		name: params.selectedPage,
+		content: formatPage(data, params.preferences),
+	};
+}
+
 
 // EXPORT
 // =============================================================================
 
 export {
     formatDoc,
+	formatDocPaged,
 	formatPage,
     formatPages,
 };

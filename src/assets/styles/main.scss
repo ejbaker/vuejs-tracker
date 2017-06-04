@@ -7,7 +7,7 @@ html, body {
 
 // margin to help clear the nav bar
 #content {
-	margin-top: 90px;
+	margin: 90px 10px 10px;
 }
 
 aside {
@@ -16,4 +16,7 @@ aside {
 
 textarea {
   max-width: 95%;
+  min-width: 95%;
+  min-height: 100px;
+  margin: auto !important;
 }

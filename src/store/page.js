@@ -23,6 +23,10 @@ const STORAGE_KEY = "vuejs-threadtracker-page";
  * @param {string} page
  */
 function setPage(state, page) {
+	// check page
+	if (page === undefined || page === null) {
+		page = "";
+	}
 	// save to local storage with 'simple' flag set
 	local.save(STORAGE_KEY, page, true);
 	// set page

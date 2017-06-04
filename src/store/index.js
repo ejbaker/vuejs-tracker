@@ -14,6 +14,7 @@ import { currentPages, setPages, pullPages } from "@/store/pages";
 import { currentUser, setUser, login, pullUser } from "@/store/user";
 import { currentShowPreview, setShowPreview, updateShowPreview, pullShowPreview } from "@/store/preview";
 import { currentTemplate, setTemplate, updateTemplate, pullTemplate } from "@/store/template";
+import { currentError, setError, updateError } from "@/store/error";
 
 // SETUP
 // =============================================================================
@@ -48,6 +49,8 @@ function logout({ commit }) {
 		loggedIn: false,
 		preferences: {},
 	});
+	// clear error
+	commit("setError", "");
 }
 
 /**
@@ -62,6 +65,7 @@ function reloadDoc({ commit }, params) {
 	commit("setPages", []);
 	commit("setDoc", []);
 	commit("setPage", params.selectedPage);
+	commit("setError", "");
 	// call pullPages
 	pullPages({ commit }, params)
 		// success
@@ -71,10 +75,8 @@ function reloadDoc({ commit }, params) {
 			// call pullDoc
 			return pullDoc({ commit }, params);
 		})
-		// errors
-		.catch((err) => {
-			console.log(err);
-		});
+		// set error (requires formatting)
+		.catch(err => updateError({ commit }, err));
 }
 
 
@@ -92,11 +94,12 @@ const store = new Vuex.Store({
 			loggedIn: false,
 			preferences: {},
 		},
-		selectedPage: null,
+		selectedPage: "",
 		pages: [],
 		doc: [],
 		template: demo,
 		showPreview: false,
+		error: "",
 	},
 	getters: {
 		user: currentUser,
@@ -105,6 +108,7 @@ const store = new Vuex.Store({
 		doc: currentDoc,
 		showPreview: currentShowPreview,
 		template: currentTemplate,
+		error: currentError,
 	},
 	actions: {
 		logout,
@@ -119,6 +123,7 @@ const store = new Vuex.Store({
 		pullShowPreview,
 		updateShowPreview,
 		updateTemplate,
+		updateError,
 	},
 	mutations: {
 		setUser,
@@ -127,6 +132,7 @@ const store = new Vuex.Store({
 		setPages,
 		setShowPreview,
 		setTemplate,
+		setError,
 	},
 });
 

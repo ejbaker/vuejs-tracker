@@ -1,7 +1,42 @@
+.guide {
 main {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
+background: #fff;
+max-height: 70vh;
+overflow: auto;
+margin-bottom: 20px;
+padding: 0 10px 10px;
+border-top: 2px solid #ccc;
+border-bottom: 2px solid #ccc;
+}
+.note {
+	font-size: smaller;
+  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+  background-color: hsla(0, 0%, 0%, 0.1);
+	&::before {
+		content: "Note:";
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
+}
+
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

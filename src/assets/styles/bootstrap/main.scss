@@ -1,12 +1,14 @@
 // assign the font generally
-div, table, span {
-  font-family: Helvetica, Arial, sans-serif;
+.bootstrap {
+  main, nav, aside, header, footer
+  form, div, table, span,
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Helvetica, Arial, sans-serif !important;
+  }
 }
 
-@import "animate.scss";
 @import "forms.scss";
 @import "lists.scss";
 @import "menus.scss";
 @import "misc.scss";
 @import "modals.scss";
-@import "pagination.scss";

@@ -1,10 +1,4 @@
 (function () {
-	/**
-	* PHILLY NOTIFICATIONS APP
-	* configure settings
-	* Sets up the Node server with Express.
-	**/
-
 	// grab environment variables
 	const env = process.env.NODE_ENV || process.env.npm_config_environment || process.env.npm_package_config_environment || "production";
 	// nab from command line

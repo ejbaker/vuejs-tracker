@@ -6,7 +6,7 @@
 	**/
 
 	// third-party libraries
-	const _ = require("lodash");
+	const { extend } = require("lodash");
 	// import the global settings
 	const main = require("@/config/development");
 
@@ -15,7 +15,7 @@
 	* Main module.
 	* This is just an object in this case.
 	*/
-	const Main = _.extend({}, main);
+	const Main = extend({}, main);
 
 
 	/*

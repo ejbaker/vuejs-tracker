@@ -10,7 +10,7 @@ import local from "@/store/local";
 // resource
 import { getDoc as get } from "@/resource";
 // format
-import { formatDoc, formatPage } from "@/resource/format";
+import { formatDoc, formatDocPaged } from "@/resource/format";
 
 
 // PROPERTIES
@@ -80,7 +80,8 @@ function pullDoc({ commit }, params) {
 				}
 				// otherwise...
 				else {
-					doc = formatPage(response.data.values, params.preferences);
+					doc = formatDocPaged(response.data.values, params);
+					// doc = formatPage(response.data.values, params.preferences);
 				}
 				// commit to the store
 				commit("setDoc", doc);

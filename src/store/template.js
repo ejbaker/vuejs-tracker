@@ -50,7 +50,6 @@ function currentTemplate(state) {
  * @param {string} template
  */
 function updateTemplate({ commit }, template) {
-	console.log("Saving #2...");
 	// otherwise...
 	commit("setTemplate", template);
 }

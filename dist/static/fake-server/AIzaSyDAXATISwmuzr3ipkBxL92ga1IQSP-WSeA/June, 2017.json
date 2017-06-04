@@ -1,9 +1,0 @@
-{
-	"majorDimension": "COLUMNS",
-	"range": "'V33'!A1:B100",
-	"values": [
-			["Date", "Type", "Label", "Link", "Description"],
-			["6/2/2017","log","Intro Thread III", "https://empatheias.dreamwidth.org/420270.html?thread=90773166#cmt90773166", "Lelouch arrives in Empatheias, Mk II."],
-			["6/15/2017","log","Suzaku","https://empatheias.dreamwidth.org/432706.html?thread=92700994#cmt92700994","Trouble with Elios"]
-		]
-}

@@ -1,17 +1,32 @@
-@import "../bootstrap/main.scss";
-
 .preferences {
-    position: relative;
+    display: inline-block;
 }
 .advanced-preferences {
     position: fixed;
+    top: 113px;
     left: 0;
     right: 0;
 	background: #eee;
 	padding: 5px 10px;
+    div {
+        display: inline-block;
+        margin-left: 10px;
+    }
+    div:first-of-type {
+        margin-left: 0;
+    }
 }
 .btn.show-preferences {
     display: block;
     margin-left: 5px;
 }
-
+@keyframes slide-in {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 36px;
+    opacity: 100%;
+  }
+}

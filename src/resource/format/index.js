@@ -1,4 +1,4 @@
 // EXPORTS
 // =============================================================================
 
-export { formatDoc, formatPage, formatPages } from "./core";
+export { formatDoc, formatDocPaged, formatPage, formatPages } from "./core";

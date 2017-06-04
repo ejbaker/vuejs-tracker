@@ -35,14 +35,7 @@ function getPages(params) {
 	// add the server
 	uri += conf.api.server;
 	// environment check
-	if (conf.env === "development") {
-		// complete the string
-		uri += `${params.apiKey}/sheets.json`;
-	}
-	// otherwise...
-	else {
-		uri += `${params.sheetId}?includeGridData=false&fields=sheets(properties(sheetId%2Ctitle))&key=${params.apiKey}`;
-	}
+	uri += `${params.sheetId}?includeGridData=false&fields=sheets(properties(sheetId%2Ctitle))&key=${params.apiKey}`;
 	// get resource
 	return Vue.prototype.$http.get(uri);
 }
@@ -64,26 +57,12 @@ function getDoc(params) {
 		uri += `:${conf.api.port}`;
 	}
 	// add the server
-	uri += conf.api.server;
-	// environment check
-	if (conf.env === "development") {
-		// complete the string
-		uri += `${params.apiKey}/`;
-	}
-	// otherwise...
-	else {
-		uri += `${params.sheetId}/values/`;
-	}
+	uri += `${conf.api.server}${params.sheetId}/values/`;
 	// selected page?
 	if (params.preferences.bySheet) {
 		let selectedPage = params.selectedPage;
-		// handle development
-		if (conf.env === "development") {
-			if (!selectedPage) {
-				selectedPage = "May, 2017";
-			}
-			// grab the page
-			return Vue.prototype.$http.get(`${uri}${selectedPage}.json`);
+		if (!selectedPage) {
+			selectedPage = params.pages[0];
 		}
 		// production
 		if (selectedPage) {
@@ -93,16 +72,8 @@ function getDoc(params) {
 		// grab the page
 		return Vue.prototype.$http.get(`${uri}${selectedPage}${uriEnd}`);
 	}
-	// set promises
-	let promises;
-	// in development, grab from fake-storage
-	if (conf.env === "development") {
-		promises = params.pages.map(selectedPage => Vue.prototype.$http.get(`${uri}${selectedPage}.json`));
-	}
 	// otherwise...
-	else {
-		promises = params.pages.map(selectedPage => Vue.prototype.$http.get(`${uri}${selectedPage}!${uriEnd}`));
-	}
+	const promises = params.pages.map(selectedPage => Vue.prototype.$http.get(`${uri}${selectedPage}!${uriEnd}`));
 	// after all the promises have resolved...
 	return Promise.all(promises);
 }

@@ -48,14 +48,15 @@ function lowercase(value) {
 }
 
 /**
- * Lowercase a string, replacing spaces with -.
+ * Lowercase a string, replacing spaces with a specified character.
  *
  * @method lowercaseShrink
  * @param {string} value
+ * @param {string} replace (optional)
  * @return {object}
  */
-function lowercaseShrink(value) {
-	return toLower(value).replace(" ", "-");
+function lowercaseShrink(value, replace = "-") {
+	return toLower(value).replace(" ", replace);
 }
 
 /**

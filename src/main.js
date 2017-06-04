@@ -23,40 +23,12 @@ import UserTemplate from "@/components/UserTemplate";
 // STORE ----------------------------------
 import store from "@/store";
 
-// FILTERS ----------------------------------
-import {
-	filterBy,
-	findBy,
-	lowercase,
-	lowercaseWords,
-	uppercase,
-	capitalizeWords,
-	reverse,
-	date,
-} from "@/utils/filters";
-const filters = {
-	// lists
-	filterBy,
-	findBy,
-	// strings
-	lowercase,
-	lowercaseWords,
-	uppercase,
-	capitalizeWords,
-	reverse,
-	date,
-};
-console.log(filters.date);
-
-
 // CONFIG
 // =============================================================================
 // VUE ----------------------------------
 Vue.config.productionTip = false;
 // use axios
 Vue.prototype.$http = axios;
-// add filters
-Vue.prototype.filters = filters;
 
 // INSTANTIATE
 // =============================================================================

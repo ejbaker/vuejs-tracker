@@ -1,10 +1,12 @@
 <template>
-	<div>
-		<label>
-			<input type="checkbox" v-model="showReadMe" class="form-control">
-			Show guide?
-		</label>
-		<read-me v-if="showReadMe"></read-me>
+	<div class="guide">
+		<div class="form-check form-check-inline">
+			<label class="form-check-label">
+				<input type="checkbox" v-model="showReadMe" class="form-check-input">
+				Show guide?
+			</label>
+			<read-me v-if="showReadMe"></read-me>
+		</div>
 	</div>
 </template>
 

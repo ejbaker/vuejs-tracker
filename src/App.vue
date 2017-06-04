@@ -1,67 +1,52 @@
 <template>
 	<div id="app">
-		<interactivity :template-id="userTemplateId"/>
+		<interactivity class="bootstrap" :template-id="userTemplateId"/>
 		<main id="content">
-			<edit-template/>
-			<user-template
-				v-if="user.loggedIn && !error"
-				v-show="showPreview"
-				:doc="doc"
-				:user-template-id="userTemplateId" />
+			<template v-if="!error">
+				<show-guide class="bootstrap"/>
+				<user-template :template-id="userTemplateId" :logged-in="user.loggedIn" />
+			</template>
+			<template v-else>
+				<errors class="bootstrap"/>
+			</template>
 		</main>
-		<!-- 
-		<loading :is-loading="loading"/>
-		<errors :error="error"/>
-		-->
 	</div>
 </template>
 
 <script>
 // dependencies
 // child components
-import Interactivity from "@/components/Interactivity";
-import EditTemplate from "@/components/UserTemplate/EditTemplate";
-import UserTemplate from "@/components/UserTemplate/Custom";
+import Interactivity from "@/components/Interactivity/Main";
+import Errors from "@/components/Errors/Main";
+import ShowGuide from "@/components/Guide/ShowGuide";
+import UserTemplate from "@/components/UserTemplate/Main";
 // component
 export default {
 	// child components
 	components: {
 		Interactivity,
+		Errors,
+		ShowGuide,
 		UserTemplate,
-		EditTemplate,
 	},
 	// bindings
 	data() {
 		return {
 			// is loading?
 			loading: false,
-			// has error?
-			error: null,
 			// user template ID
 			userTemplateId: "myTemplate",
 		};
 	},
 	// computed bindings
 	computed: {
+		// current error
+		error() {
+			return this.$store.getters.error;
+		},
 		// current user
 		user() {
 			return this.$store.getters.user;
-		},
-		// current pages
-		pages() {
-			return this.$store.getters.pages;
-		},
-		// page
-		selectedPage() {
-			return this.$store.getters.page;
-		},
-		// current document
-		doc() {
-			return this.$store.getters.doc;
-		},
-		// show preview?
-		showPreview() {
-			return this.$store.getters.showPreview;
 		},
 	},
 	// on view creation
@@ -131,8 +116,7 @@ export default {
 			.then(() => (this.error = null))
 			// handle errors
 			.catch((err) => {
-				this.error = true;
-				console.log("Error :(", err);
+				this.$store.dispatch("updateError", err);
 			})
 			;
 		},
@@ -140,6 +124,6 @@ export default {
 };
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
 @import "~STYLES/main.scss";
 </style>
