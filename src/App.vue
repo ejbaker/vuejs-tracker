@@ -3,6 +3,9 @@
 		<interactivity class="bootstrap" :template-id="userTemplateId"/>
 		<main id="content">
 			<template v-if="!error">
+				<header class="bootstrap">
+					<h1 class="small">Welcome to the Activity Tracker</h1>
+				</header>
 				<show-guide class="bootstrap"/>
 				<user-template :template-id="userTemplateId" :logged-in="user.loggedIn" />
 			</template>
@@ -103,7 +106,9 @@ export default {
 					return Promise.resolve();
 				}
 				// get the template
-				return this.$store.dispatch("pullTemplate");
+				return this.$store.dispatch("pullTemplate", {
+					preferences: user.preferences,
+				});
 			})
 			// show preview
 			.then(() => {

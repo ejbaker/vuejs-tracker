@@ -1,18 +1,16 @@
 <template>
-	<div>
-		<nav class="interactivity form-inline">
-			<template v-if="user.loggedIn">
-				<list-pages v-if="user.preferences.bySheet"/>
-				<reload/>
-				<preview/>
-				<export :template-id="templateId"/>
-				<logout/>
-			</template>
-			<template v-else>
-				<login/>
-			</template>
-		</nav>
-	</div>
+	<nav class="interactivity form-inline">
+		<template v-if="user.loggedIn">
+			<list-pages v-if="user.preferences.bySheet"/>
+			<reload/>
+			<preview/>
+			<export :template-id="templateId"/>
+			<logout/>
+		</template>
+		<template v-else>
+			<login/>
+		</template>
+	</nav>
 </template>
 
 <script>

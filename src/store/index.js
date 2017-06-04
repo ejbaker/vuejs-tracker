@@ -1,7 +1,7 @@
 // DEPENDENCIES
 // =============================================================================
 // DEFAULT TEMPLATE
-import demo from "@/components/UserTemplate/demo";
+import { regular as demo } from "@/components/UserTemplate/demo";
 
 // VUE ----------------------------------
 import Vue from "vue";
