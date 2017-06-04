@@ -1,6 +1,6 @@
 {
   "name": "threadtracker",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Vue2 Activity Tracker for Journal RP",
   "author": "rainfall",
   "private": true,
@@ -14,7 +14,9 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "yarn run unit && yarn run e2e",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "version:patch": "npm version patch",
+    "push:git": "git push --tags origin HEAD:master"
   },
   "dependencies": {
     "axios": "^0.16.1",

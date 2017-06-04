@@ -37,7 +37,7 @@
 						to the element instead. For example:
 						<code>&lt;a v-bind:href="thread.Link">{{ thread.Title }}&lt;/a></code>
 						<br>
-						Or, you can use the easier shorthand: <b>:</b>, as in <code>&lt;a v-bind:href="thread.Link"></code>
+						Or, you can use the easier shorthand: <b>:</b>, as in <code>&lt;a :href="thread.Link"></code>
 					</li>
 					<li>
 						Wherever your template needs to repeat, use <b>&lt;template v-for="x in y"></b>. For example:

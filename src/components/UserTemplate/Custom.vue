@@ -65,6 +65,8 @@ export default {
 			`;
 			// compile it and update our template
 			this.template = Vue.compile(wrappedTemplate).render;
+			// log out value of template...
+			console.log("Compiled?", this.template());
 		},
 	},
 	// filters
