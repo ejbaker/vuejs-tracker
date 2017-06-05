@@ -58,6 +58,8 @@ export default {
 				// replace raw-code placeholders with real tags
 				.replace(/<span class="raw-code-open"><\/span>/g, "<raw-code>")
 				.replace(/<span class="raw-code-close"><\/span>/g, "</raw-code>")
+				// replace <br> with <br/> - DREAMWIDTH BUG
+				.replace(/<br>/g, "<br/>")
 				// trim whitespace
 				.trim()
 				;
