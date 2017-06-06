@@ -1,5 +1,5 @@
 <template>
-	<div class="guide">
+	<div class="guide" id="top">
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
 				<input type="checkbox" v-model="showReadMe" class="form-check-input">

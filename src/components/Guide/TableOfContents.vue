@@ -16,12 +16,9 @@ export default {
 	data() {
 		return {
 			rawSections: [
-				"About This App",
+				"Getting Started",
 				"How to Use This App",
-				"Before You Start",
-				"Set Up",
-				"User Preferences",
-				"FAQ",
+				"Template Syntax",
 			],
 		};
 	},

@@ -1,26 +1,78 @@
 .guide {
-main {
-background: #fff;
-max-height: 70vh;
-overflow: auto;
-margin-bottom: 20px;
-padding: 0 10px 10px;
-border-top: 2px solid #ccc;
-border-bottom: 2px solid #ccc;
-}
-.note {
-	font-size: smaller;
-  padding: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-  border-radius: 5px;
-  background-color: hsla(0, 0%, 0%, 0.1);
-	&::before {
-		content: "Note:";
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-}
+  main {
+    background: #fff;
+    max-height: 70vh;
+    overflow: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    section {
+      counter-reset: h1counter;
+      h1:before {
+        content: counter(h1counter) ".\0000a0";
+      }
+      h1 {
+        counter-increment: h1counter;
+      }
+      h1:after {
+        counter-reset: h2counter;
+      }
+      h2 {
+        counter-increment: h2counter;
+      }
+      h2:before {
+        content: counter(h1counter) "." counter(h2counter) ".\0000a0";
+      }
+      h2:after {
+        counter-reset: h3counter;
+      }
+      h3 {
+        counter-increment: h3counter;
+      }
+      h3:before {
+        content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) ".\0000a0";
+      }
+      aside {
+        margin-left: 50px;
+        h3 {
+          font-size: 20px;
+          font-style: italic;
+          text-align: right;
+          input {
+            font-style: normal;
+          }
+        }
+      }
+    }
+  }
+  .note {
+    font-size: smaller;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    background-color: hsla(0, 0%, 0%, 0.1);
+    &::before {
+      content: "Note:";
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+  img {
+    display: block;
+    margin: auto auto 10px;
+    width: 300px;
+    max-width: 100%;
+  }
+  ul {
+    li {
+      margin-bottom: 10px;
+    }
+  }
+  code {
+    white-space: pre-line;
+  }
 }
 
 .bounce-enter-active {
