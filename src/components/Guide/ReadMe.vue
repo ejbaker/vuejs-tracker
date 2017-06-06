@@ -59,7 +59,7 @@
 				After you've entered some activity, your spreadsheet will hopefully look something like this:
 				</p>
 
-				<img src="http://i.imgur.com/8Re6ICm.png">
+				<img src="https://i.mgur.com/8Re6ICm.png">
 				<p>My example columns here are "Date", "Title", "Characters", "Link", "Description", and "AC Length".
 				Mostly very straightforward... but we'll talk about AC Length and its "Yes/No" value in a bit.</p>
 				<p>
@@ -68,25 +68,25 @@
 				<p>
 				First, let's make the document <i>shareable</i>. (Don't worry, this is completely reversible. After you're done importing the data, you can make it private again.)
 				</p>
-				<img src="http://i.imgur.com/vM6bKeR.png">
+				<img src="https://i.mgur.com/vM6bKeR.png">
 				<p>Look in the top left corner of the document and click the "Share" button that currently tells you your document is private.</p>
-				<img src="http://i.imgur.com/ECKeN3c.png">
+				<img src="https://i.mgur.com/ECKeN3c.png">
 				<p>This dialogue will pop up. Click on the "Get sharable link" text to expand the dialogue.</p>
-				<img src="http://i.imgur.com/wxUqj5I.png">
+				<img src="https://i.mgur.com/wxUqj5I.png">
 
 				<p>The setting you want is "anyone with the link can <b>view</b>".
 
 				<p>Your <b>Sheet ID</b> is the part of your share link between the <b>/d/</b> and the next <b>/</b>, like so:
 
-				<img src="http://i.imgur.com/8ZUxwqq.png">
+				<img src="https://i.mgur.com/8ZUxwqq.png">
 
 				<p>Now for that optional step I mentioned. You may want to give your sheet a <b>meaningful name</b>, whether
 				you're going to be using the individual-sheets or the whole-document mode of this app. I find it useful to
 				label it with the month ("May, 2017"), since I like to use layouts that display the month name prominently.</p>
 
 				<div class="images">
-				<img src="http://i.imgur.com/sNXnbzQ.png">
-				<img src="http://i.imgur.com/kCTPIIX.png">
+				<img src="https://i.mgur.com/sNXnbzQ.png">
+				<img src="https://i.mgur.com/kCTPIIX.png">
 				</div>
 
 				<aside>
@@ -120,25 +120,25 @@
 				<div v-show="step.b">
 				<p>Go to <a href="https://console.developers.google.com/projectselector/apis/credentials">console.developers.google.com</a>
 				to get started. You'll probably be prompted to Create a Project first.</p>
-				<img src="http://i.imgur.com/bL5Ct9p.png">
+				<img src="https://i.mgur.com/bL5Ct9p.png">
 				<p>I called mine "Thread Tracker" but the important part is just that it's something you'll remember.</p>
-				<img src="http://i.imgur.com/ctNRP7u.png">
+				<img src="https://i.mgur.com/ctNRP7u.png">
 				<p>(You'll be able to re-use the same API key for as many Google Sheets as you want.</p>
 				<p>Now we can create credentials!</p>
-				<img src="http://i.imgur.com/SKcJ6ho.png">
+				<img src="https://i.mgur.com/SKcJ6ho.png">
 				<p>Specifically, an API key.</p>
-				<img src="http://i.imgur.com/0b5jtrL.png">
+				<img src="https://i.mgur.com/0b5jtrL.png">
 				<p>You can copy the key now (SAVE IT SOMEWHERE ON YOUR COMPUTER), but let's restrict it first.</p>
-				<img src="http://i.imgur.com/PFAmDSO.png">
+				<img src="https://i.mgur.com/PFAmDSO.png">
 				<p>Give it a name (again, something you'll recognize) and choose either HTTP REFERRERS and <b>https://s.codepen.io/*</b> (tested)</p>
-				<img src="http://i.imgur.com/85e2sBa.png">
+				<img src="https://i.mgur.com/85e2sBa.png">
 				<p>or IP ADDRESS (untested, but it should work if you restrict it to your own IP address)</p>
 				<p>Now go to the Dashboard (link on the left hand pane) and click <b>Enable API</b>.</p>
-				<img src="http://i.imgur.com/uw41sSL.png">
+				<img src="https://i.mgur.com/uw41sSL.png">
 				<p>You should see a list of libraries. There's a lot of them! Let's type <i>sheets</i> to narrow it down.</p>
-				<img src="http://i.imgur.com/cEKnbOm.png">
+				<img src="https://i.mgur.com/cEKnbOm.png">
 				<p>Click on <b>Google Sheets API</b>.</p>
-				<img src="http://i.imgur.com/37G1x4z.png">
+				<img src="https://i.mgur.com/37G1x4z.png">
 				<p>And enable it!</p>
 				</div>
 
@@ -433,7 +433,7 @@ import TableOfContents from "./TableOfContents";
 // properties
 const alphabet = {};
 forEach([...Array(26).keys()], (value, index) => {
-	alphabet[String.fromCharCode(index + 97)] = true;
+	alphabet[String.fromCharCode(index + 97)] = false;
 });
 const alphabetClone = Object.assign({}, alphabet);
 // component
