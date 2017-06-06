@@ -1,5 +1,5 @@
 <template>
-	<input type="button" class="btn btn-sm btn-info" @click="toggle()" :value="hidden ? 'Less' : 'More'"/>
+	<input type="button" class="btn btn-sm btn-info" @click="toggle()" :value="less ? 'More' : 'Less'"/>
 </template>
 
 <script>
@@ -7,7 +7,7 @@
 export default {
 	// inherited bindings
 	props: [
-		"hidden",
+		"less",
 	],
 	// methods
 	methods: {

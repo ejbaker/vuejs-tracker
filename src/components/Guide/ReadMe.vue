@@ -19,7 +19,7 @@
 				<li>a layout snippet for your desired journaling platform (<a href="https://dreamcodes.dreamwidth.org/tag/thread+trackers">for example, from here</a>)</li>
 				</ul>
 
-				<h2 id="the-spreadsheet">The Spreadsheet <more :hidden="step.a" @toggle="toggleStep('a')"/></h2>
+				<h2 id="the-spreadsheet">The Spreadsheet <more :less="step.a" @toggle="toggleStep('a')"/></h2>
 
 				<div v-show="step.a">
 				<p>
@@ -37,7 +37,7 @@
 				<aside>
 				<h4>
 				A Word On Labels
-				<more :hidden="aside.a" @toggle="toggleAside('a')"/>
+				<more :less="aside.a" @toggle="toggleAside('a')"/>
 				</h4>
 				<div v-show="aside.a">
 				<p>
@@ -92,7 +92,7 @@
 				<aside>
 				<h4>
 				Extra Features
-				<more :hidden="aside.b" @toggle="toggleAside('b')"/>
+				<more :less="aside.b" @toggle="toggleAside('b')"/>
 				</h4>
 				<div v-show="aside.b">
 				<p>
@@ -116,7 +116,7 @@
 				<p>Now we've got our Google Sheet. Time to get our API key!</p>
 				</div>
 
-				<h2>The API Key <more :hidden="step.b" @toggle="toggleStep('b')"/></h2>
+				<h2>The API Key <more :less="step.b" @toggle="toggleStep('b')"/></h2>
 				<div v-show="step.b">
 				<p>Go to <a href="https://console.developers.google.com/projectselector/apis/credentials">console.developers.google.com</a>
 				to get started. You'll probably be prompted to Create a Project first.</p>
@@ -142,7 +142,7 @@
 				<p>And enable it!</p>
 				</div>
 
-				<h2>The Code Snippet <more :hidden="step.c" @toggle="toggleStep('c')"/></h2>
+				<h2>The Code Snippet <more :less="step.c" @toggle="toggleStep('c')"/></h2>
 
 				<div v-if="step.c">
 				<p>Let's use the <i>Modern Feel</i> code from <a href="https://bootycall.dreamwidth.org/10069.html">here</a>,
@@ -157,7 +157,7 @@
 				beginning with the month list, and the "entry" divs.
 				</p>
 
-				<h3>Outer Repeat <more :hidden="step.d" @toggle="toggleStep('d')"/></h3>
+				<h3>Outer Repeat <more :less="step.d" @toggle="toggleStep('d')"/></h3>
 				<div v-show="step.d">
 				<p>From...</p>
 				<pre class="pre-scrollable"><code>&lt;!--MONTH BEGIN-->
@@ -195,7 +195,7 @@
 				</p>
 				</div>
 
-				<h3>The Inner Repeat <more :hidden="step.e" @toggle="toggleStep('e')"/></h3>
+				<h3>The Inner Repeat <more :less="step.e" @toggle="toggleStep('e')"/></h3>
 				<div v-show="step.e">
 				<p>The other part we need to repeat for a simple use of this layout is the individual "thread" div.</p>
 				<pre class="pre-scrollable"><code>&lt;div style="background-color: #00565b; padding: 10px; border-radius: 10px; border: solid 1px #fff; color: #d6ecea; margin-bottom: 5px;">&lt;a href="URL" style="color: #fff; font-weight: bold; text-shadow: -1px -1px 0px #5a9185, 0px -1px 0px #5a9185, 1px -1px 0px #5a9185, -1px  0px 0px #5a9185, 1px 0px 0px #5a9185, -1px 1px 0px #5a9185, 0px  1px 0px #5a9185, 1px 1px 0px #5a9185; text-decoration: none; letter-spacing: 0.2em;">**THREAD TITLE**  ▸&lt;/a> &lt;span style="color: #aacfd1; font-weight: normal; font-style: italic; letter-spacing: 0.1em;">Character 1, Character 2&lt;/span>&lt;br/>
@@ -225,7 +225,7 @@
 				<p class="note">Again, <code>thread</code> is just what I opted to call this variable. <code>x</code> or <code>row</code> would work just as well!</p>
 				</div>
 
-				<h3>The Complete Code <more :hidden="step.f" @toggle="toggleStep('f')"/></h3>
+				<h3>The Complete Code <more :less="step.f" @toggle="toggleStep('f')"/></h3>
 				<div v-show="step.f">
 				<p>And here it is, all put together...</p>
 				<textarea v-pre><center><raw-code><div style="width: 600px; border-radius: 15px; padding: 15px; border: solid 1px #1e6f5f; background-color: #d6ecea; background-image: url(http://imgur.com/39EfctA.png); background-repeat: repeat; box-shadow: 2px 2px 0px #a0adae; text-align: left;">
@@ -248,7 +248,7 @@
 				</div>
 
 				<aside>
-				<h4>Obsolete HTML <more :hidden="aside.c" @toggle="toggleAside('c')"/></h4>
+				<h4>Obsolete HTML <more :less="aside.c" @toggle="toggleAside('c')"/></h4>
 				<div v-show="aside.c">
 				<p>
 				Because this app runs your HTML through your browser's parser, you might run into trouble with
@@ -274,13 +274,13 @@
 				How to Use This App
 				</h1>
 
-				<h2>"Logging In" <more :hidden="step.g" @toggle="toggleStep('g')"/></h2>
+				<h2>"Logging In" <more :less="step.g" @toggle="toggleStep('g')"/></h2>
 				<div v-show="step.g">
 				<p>
 				Take your <b>API key</b> and <b>Sheet ID</b> from Step 1.1 and Step 1.2. Paste these into the fields on the nav bar.
 				</p>
 				<aside>
-				<h4>Advanced Options <more :hidden="aside.d" @toggle="toggleAside('d')"/></h4>
+				<h4>Advanced Options <more :less="aside.d" @toggle="toggleAside('d')"/></h4>
 				<div v-show="aside.d">
 				<p>
 				Click the <b>Advanced Options</b> button to check on your preferences. Options so far include:
@@ -316,7 +316,7 @@
 				<i>your settings and your template will be lost</i>. Be sure to save your template somewhere safe, before you
 				log out!
 				</p>
-				<h2>Using the Template Editor <more :hidden="step.h" @toggle="toggleStep('h')"/></h2>
+				<h2>Using the Template Editor <more :less="step.h" @toggle="toggleStep('h')"/></h2>
 				<div v-show="step.h">
 				<p>Take your templateified code snippet from Step 1.3 and paste it into the textarea labeled
 				"Your Template". Hit the <b>Save</b>.
@@ -330,7 +330,7 @@
 				it will look like on your journal by selecting the <b>Show White Space</b> option above your template.
 				</p>
 				</div>
-				<h2>Exporting Your Code <more :hidden="step.i" @toggle="toggleStep('i')"/></h2>
+				<h2>Exporting Your Code <more :less="step.i" @toggle="toggleStep('i')"/></h2>
 				<div v-show="step.h">
 				<p>Once you're satisfied with your template, it's time to grab that HTML for posting on your journaling platform!</p>
 				<p>Hit <b>Export</b> and a modal will open up with your HTML.</p>
@@ -354,7 +354,7 @@
 				you can do here! (Check out that link for a more in-depth break down.)
 				But you'll probably mostly be using the following:
 				</p>
-				<h2><code v-pre>{{ thread.date }}</code> to render variables <more :hidden="aside.e" @toggle="toggleAside('e')"/></h2>
+				<h2><code v-pre>{{ thread.date }}</code> to render variables <more :less="aside.e" @toggle="toggleAside('e')"/></h2>
 				<div v-show="aside.e">
 				<p>Anything that isn't inside an HTML attribute gets rendered like this!</p>
 				<p>You can also get a little more fancy with filters, like so:</p>
@@ -368,7 +368,7 @@
 				The date filter uses <b>MomentJS</b> on the backend, <a href="https://momentjs.com/docs/#/displaying/">and
 				all of its formats work</a>.
 				</p>
-				<h3>Other Filters <more :hidden="aside.f" @toggle="toggleAside('f')"/></h3>
+				<h3>Other Filters <more :less="aside.f" @toggle="toggleAside('f')"/></h3>
 				<ul v-show="aside.f">
 				<li>date: Formats a date</li>
 				<li>lowercase: makes a string lowercase</li>
@@ -377,14 +377,14 @@
 				<li>reverse: gnirts a sesreveR</li>
 				</ul>
 				</div>
-				<h2><code>v-bind</code> to render variables <i>in</i> HTML attributes  <more :hidden="aside.g" @toggle="toggleAside('g')"/></h2>
+				<h2><code>v-bind</code> to render variables <i>in</i> HTML attributes  <more :less="aside.g" @toggle="toggleAside('g')"/></h2>
 				<div v-show="aside.g">
 				<p>When you need to put a variable inside an attribute (like in the SRC of an <code>&lt;img</code>, or
 				the HREF of an <code>&lt;a</code>, you need to <i>bind</i> it.</p>
 				<p><code v-pre>&lt;a v-bind:href="thread.Link">{{ thread.title }}&lt;/a></code></p>
 				<p>Or, you can use the shorthand: <b>:</b>, as in <code v-pre>&lt;a :href="thread.link"></code>!</p>
 				</div>
-				<h2><code>v-if</code> and <code>v-else</code>  <more :hidden="aside.h" @toggle="toggleAside('h')"/></h2>
+				<h2><code>v-if</code> and <code>v-else</code>  <more :less="aside.h" @toggle="toggleAside('h')"/></h2>
 				<div v-show="aside.h">
 				<p>If you have chunks of HTML you want to <i>conditionally</i> show, these are the statements for you!</p>
 				<p>For example, maybe you have a row indicating <b>Completed</b> threads. You want to show a special 
@@ -393,7 +393,7 @@
 				&lt;a :href="thread.link">{{ thread.title }}&lt;/a> // {{ thread.characters }} &lt;span v-if="thread.completed">[&lt;b>complete&lt;/b>]&lt;/span>
 				&lt;/div></code></pre>
 				</div>
-				<h2><code>v-for="item in items"</code> to repeat code <more :hidden="aside.i" @toggle="toggleAside('i')"/></h2>
+				<h2><code>v-for="item in items"</code> to repeat code <more :less="aside.i" @toggle="toggleAside('i')"/></h2>
 				<div v-show="aside.i">
 				<p>
 				This attribute can be put on <i>any</i> HTML element and used to repeat chunks of code.
