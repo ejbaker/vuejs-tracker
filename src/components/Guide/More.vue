@@ -1,5 +1,5 @@
 <template>
-	<input type="button" class="btn btn-sm btn-info" @click="toggle()" :value="less ? 'More' : 'Less'"/>
+	<input type="button" class="btn btn-sm btn-info" @click="toggle()" :value="!less ? 'More' : 'Less'"/>
 </template>
 
 <script>
